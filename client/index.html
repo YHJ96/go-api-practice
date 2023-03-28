@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="home_btn" type="button">Home Fetch</button>
+    <button class="user_btn" type="button">User Fetch</button>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const URL = "http://localhost:8080";
+    const $homeButton = document.querySelector(".home_btn");
+    const $userButton = document.querySelector(".user_btn");
+
+    $homeButton.addEventListener("click", () => {
+      axios.get(URL).then((res) => console.log(res));
+    });
+
+    $userButton.addEventListener("click", () => {
+      axios.get(URL + "/user").then((res) => console.log(res));
+    });
+  </script>
+</html>
